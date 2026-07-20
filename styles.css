@@ -82,6 +82,20 @@ header > * {
 	z-index: 1;
 }
 
+
+header .header-image {
+	position: absolute;
+	right: clamp(1rem, 6vw, 5rem);
+	top: 50%;
+	transform: translateY(-42%);
+	width: min(34.5vw, 465px);
+	height: auto;
+	border: 1px solid rgba(185, 154, 102, 0.25);
+	opacity: 0.88;
+	object-fit: cover;
+	z-index: 0;
+}
+
 header h1 {
 	max-width: 6.2ch;
 	font-size: clamp(3.2rem, 10vw, 7.2rem);
@@ -94,6 +108,11 @@ header > p {
 	letter-spacing: 0.14em;
 	font-size: clamp(0.98rem, 2vw, 1.35rem);
 	margin-bottom: 1.35rem;
+	max-width: 46%;
+}
+
+header h1 {
+	max-width: min(7ch, 46%);
 }
 
 nav {
@@ -308,6 +327,13 @@ main section::before {
 		font-size: 0.93rem;
 	}
 
+
+	header .header-image {
+		width: min(31.5vw, 315px);
+		right: 1rem;
+		top: 58%;
+	}
+
 	#trayectoria article {
 		flex-basis: calc(50% - 0.5rem);
 	}
@@ -332,7 +358,22 @@ main section::before {
 
 	header h1 {
 		font-size: clamp(2.4rem, 13vw, 4.1rem);
+		max-width: 100%;
 	}
+
+	header > p {
+		max-width: 100%;
+	}
+
+	header .header-image {
+		position: static;
+		transform: none;
+		width: 100%;
+		margin-top: 0.8rem;
+		opacity: 0.95;
+		z-index: 1;
+	}
+
 
 	#trayectoria article {
 		flex-basis: 100%;
