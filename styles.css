@@ -9,6 +9,13 @@
 	--light: #f4f0e8;
 	--line-dark: rgba(20, 20, 18, 0.28);
 	--line-light: rgba(244, 240, 232, 0.2);
+	--section-min-height: 100vh;
+}
+
+@supports (min-height: 100svh) {
+	:root {
+		--section-min-height: 100svh;
+	}
 }
 
 * {
@@ -48,7 +55,7 @@ a {
 }
 
 header {
-	min-height: 82vh;
+	min-height: var(--section-min-height);
 	padding: clamp(1.25rem, 4vw, 3rem) clamp(1rem, 6vw, 5rem);
 	display: flex;
 	flex-direction: column;
@@ -154,6 +161,7 @@ main {
 }
 
 main section {
+	min-height: var(--section-min-height);
 	padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 6vw, 5rem);
 	position: relative;
 	border-bottom: 1px solid var(--line-dark);
@@ -187,7 +195,9 @@ main section::before {
 }
 
 #sobre-mi p {
-	max-width: 36ch;
+	max-width: 48ch;
+	font-size: clamp(1.3rem, 2.4vw, 1.95rem);
+	line-height: 1.55;
 }
 
 #trayectoria {
@@ -250,6 +260,7 @@ main section::before {
 
 #contacto {
 	position: relative;
+	min-height: var(--section-min-height);
 	padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 6vw, 5rem);
 	background: linear-gradient(155deg, #11110f 0%, #1a1917 55%, #12120f 100%);
 	color: var(--light);
@@ -313,7 +324,6 @@ main section::before {
 
 @media (max-width: 900px) {
 	header {
-		min-height: 72vh;
 		padding-top: 4.6rem;
 	}
 
